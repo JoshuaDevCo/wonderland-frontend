@@ -15,11 +15,9 @@ function Main() {
                 <div className="landing-main-btn">
                     <p>Enter App (Coming Soon)</p>
                 </div>
-                <Link href="https://wonderland.gitbook.io/wonderland/" target="_blank" rel="noreferrer">
-                    <div className="landing-main-btn">
-                        <p>Documentation (Coming Soon)</p>
-                    </div>
-                </Link>
+                <div className="landing-main-btn">
+                    <p>Documentation (Coming Soon)</p>
+                </div>
             </div>
             <div className="landing-main-title-wrap">
                 <p>The Island</p>

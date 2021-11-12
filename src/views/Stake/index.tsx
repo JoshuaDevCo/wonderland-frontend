@@ -91,10 +91,10 @@ function Stake() {
         setQuantity("");
     };
 
-    const trimmedMemoBalance = trim(Number(memoBalance), 6);
-    const trimmedStakingAPY = trim(stakingAPY * 100, 1);
-    const stakingRebasePercentage = trim(stakingRebase * 100, 4);
-    const nextRewardValue = trim((Number(stakingRebasePercentage) / 100) * Number(trimmedMemoBalance), 6);
+    const trimmedMemoBalance = trim(Number(memoBalance) * 0, 6);
+    const trimmedStakingAPY = trim(stakingAPY * 100 * 0, 1);
+    const stakingRebasePercentage = trim(stakingRebase * 100 * 0, 4);
+    const nextRewardValue = trim((Number(stakingRebasePercentage) / 100) * Number(trimmedMemoBalance) * 0, 6);
 
     return (
         <div className="stake-view">
@@ -103,7 +103,7 @@ function Stake() {
                     <Grid className="stake-card-grid" container direction="column" spacing={2}>
                         <Grid item>
                             <div className="stake-card-header">
-                                <p className="stake-card-header-title">TIME Staking (🎩, 🎩)</p>
+                                <p className="stake-card-header-title">ISLD Staking (🏝, 🏝)</p>
                                 <RebaseTimer />
                             </div>
                         </Grid>
@@ -130,7 +130,7 @@ function Stake() {
                                                         currency: "USD",
                                                         maximumFractionDigits: 0,
                                                         minimumFractionDigits: 0,
-                                                    }).format(stakingTVL)
+                                                    }).format(0)
                                                 ) : (
                                                     <Skeleton width="150px" />
                                                 )}
@@ -141,7 +141,7 @@ function Stake() {
                                     <Grid item xs={6} sm={4} md={4} lg={4}>
                                         <div className="stake-card-index">
                                             <p className="stake-card-metrics-title">Current Index</p>
-                                            <p className="stake-card-metrics-value">{currentIndex ? <>{trim(Number(currentIndex), 2)} TIME</> : <Skeleton width="150px" />}</p>
+                                            <p className="stake-card-metrics-value">{currentIndex ? <>{trim(Number(1), 2)} ISLD</> : <Skeleton width="150px" />}</p>
                                         </div>
                                     </Grid>
                                 </Grid>
@@ -154,7 +154,7 @@ function Stake() {
                                     <div className="stake-card-wallet-connect-btn" onClick={connect}>
                                         <p>Connect Wallet</p>
                                     </div>
-                                    <p className="stake-card-wallet-desc-text">Connect your wallet to stake TIME tokens!</p>
+                                    <p className="stake-card-wallet-desc-text">Connect your wallet to stake ISLD tokens!</p>
                                 </div>
                             )}
                             {address && (
@@ -196,7 +196,7 @@ function Stake() {
                                                                 onChangeStake("stake");
                                                             }}
                                                         >
-                                                            <p>{txnButtonText(pendingTransactions, "staking", "Stake TIME")}</p>
+                                                            <p>{txnButtonText(pendingTransactions, "staking", "Stake ISLD")}</p>
                                                         </div>
                                                     ) : (
                                                         <div
@@ -222,7 +222,7 @@ function Stake() {
                                                                 onChangeStake("unstake");
                                                             }}
                                                         >
-                                                            <p>{txnButtonText(pendingTransactions, "unstaking", "Unstake TIME")}</p>
+                                                            <p>{txnButtonText(pendingTransactions, "unstaking", "Unstake ISLD")}</p>
                                                         </div>
                                                     ) : (
                                                         <div
@@ -252,17 +252,17 @@ function Stake() {
                                     <div className="stake-user-data">
                                         <div className="data-row">
                                             <p className="data-row-name">Your Balance</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(timeBalance), 4)} TIME</>}</p>
+                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(timeBalance), 4)} ISLD</>}</p>
                                         </div>
 
                                         <div className="data-row">
                                             <p className="data-row-name">Your Staked Balance</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trimmedMemoBalance} MEMO</>}</p>
+                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trimmedMemoBalance} sISLD</>}</p>
                                         </div>
 
                                         <div className="data-row">
                                             <p className="data-row-name">Next Reward Amount</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{nextRewardValue} MEMO</>}</p>
+                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{nextRewardValue} sISLD</>}</p>
                                         </div>
 
                                         <div className="data-row">
@@ -272,7 +272,7 @@ function Stake() {
 
                                         <div className="data-row">
                                             <p className="data-row-name">ROI (5-Day Rate)</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(fiveDayRate) * 100, 4)}%</>}</p>
+                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(0) * 100, 4)}%</>}</p>
                                         </div>
                                     </div>
                                 </div>
