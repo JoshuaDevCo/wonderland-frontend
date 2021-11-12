@@ -8,6 +8,7 @@ import { Skeleton } from "@material-ui/lab";
 
 function Footer() {
     const isAppLoading = useSelector<IReduxState, boolean>(state => state.app.loading);
+    /*
     const stakingAPY = useSelector<IReduxState, number>(state => {
         return state.app.stakingAPY;
     });
@@ -19,6 +20,9 @@ function Footer() {
     });
 
     const trimmedStakingAPY = trim(stakingAPY * 100, 1);
+    */
+
+    const stakingAPY = 0;
 
     return (
         <div className="landing-footer">
@@ -33,7 +37,7 @@ function Footer() {
                                 new Intl.NumberFormat("en-US", {
                                     maximumFractionDigits: 0,
                                     minimumFractionDigits: 0,
-                                }).format(circSupply)
+                                }).format(0)
                             )}
                         </p>
                     </div>
@@ -50,7 +54,7 @@ function Footer() {
                                     currency: "USD",
                                     maximumFractionDigits: 0,
                                     minimumFractionDigits: 0,
-                                }).format(treasuryBalance)
+                                }).format(0)
                             )}
                         </p>
                     </div>
@@ -58,9 +62,7 @@ function Footer() {
                 <Grid item xs={12} sm={4} md={4} lg={4}>
                     <div className="landing-footer-item-wrap">
                         <p className="landing-footer-item-title">Current APY</p>
-                        <p className="landing-footer-item-value">
-                            {stakingAPY ? <>{new Intl.NumberFormat("en-US").format(Number(trimmedStakingAPY))}%</> : <Skeleton width="150px" />}
-                        </p>
+                        <p className="landing-footer-item-value">0 %</p>
                     </div>
                 </Grid>
             </Grid>
